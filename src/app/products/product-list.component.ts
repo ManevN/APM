@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product";
+import { ProductService } from "./product.service";
 
 
 @Component({
@@ -17,8 +18,9 @@ export class ProductListComponent implements OnInit{
   
     _listFilter : string;
 
-    constructor(){
-      this.filteredProducts = this.products;
+    
+
+    constructor(private productService: ProductService){  
       this.listFilter = "";
     }
 
@@ -32,7 +34,8 @@ export class ProductListComponent implements OnInit{
     }
 
     ngOnInit():void{
-      console.log('Init state!!!');
+     this.products = this.productService.getProducts();
+     this.filteredProducts = this.products;
     }
 
     filteredProducts : IProduct[];
