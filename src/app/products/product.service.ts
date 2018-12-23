@@ -12,13 +12,20 @@ import { catchError, tap } from 'rxjs/operators';
 export class ProductService{
 
     private productUrl = 'api/products/products.json'
+    products :IProduct[] =[];
 
     constructor(private http:HttpClient){}
 
     getProducts(): Observable<IProduct[]>{
+  
       return this.http.get<IProduct[]>(this.productUrl).pipe(
         tap(data => console.log('All' + JSON.stringify(data))),catchError(this.handleError)
       );
+    }
+
+    getProductById(id):IProduct{
+      this.getProducts().subscribe(products => this.products = products);
+      return this.products.find(x => x.productId == id);
     }
 
     private handleError(err: HttpErrorResponse){
