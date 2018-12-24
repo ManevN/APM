@@ -23,11 +23,6 @@ export class ProductService{
       );
     }
 
-    getProductById(id):IProduct{
-      this.getProducts().subscribe(products => this.products = products);
-      return this.products.find(x => x.productId == id);
-    }
-
     private handleError(err: HttpErrorResponse){
 
       let errorMessage = '';
