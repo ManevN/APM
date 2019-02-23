@@ -1,0 +1,63 @@
+<div class="card">
+    <div class="card-header">
+        <button class="btn btn-outline-secondary"
+            (click)="onBack()"
+            style="width:80px">
+            <i class="fa fa-chevron-left"> Back </i>
+        </button>
+        Add new product
+    </div>
+    <div class="card-body">
+        <form (ngSubmit)="onSave()" [formGroup]="productForm">
+                <div class="form-group row mb-2"> 
+                    <label class="col-md-2 col-form-label" for="productNameID">*Product Name:</label>
+                    <input id="productNameID" type="text"
+                    placeholder="Product Name..."
+                    formControlName="productName"
+                    style="margin-left:20px"/>
+                </div>
+                <div>
+                    <label for="productCodeID">Product Code:</label>
+                    <input id="productCodeID" type="text"
+                        placeholder="Product Code..."
+                        formControlName="productCode"
+                        style="margin-left:20px"/>
+                </div>
+                <div>
+                        <label for="releaseDateID">Release Date:</label>
+                        <input id="releaseDateID" type="text"
+                            placeholder="Release Date..."
+                            formControlName="releaseDate"
+                            style="margin-left:20px"/>
+                    </div>
+                <div>
+                        <label for="priceID">Price:</label>
+                        <input id="priceID" type="text"
+                            placeholder="Price..."
+                            formControlName="price"
+                            style="margin-left:20px"/>
+                </div>
+                <div>
+                        <label for="descriptionID">Description: </label>
+                        <input id="descriptionID" type="text"
+                            placeholder="Description..."
+                            formControlName="description"
+                            style="margin-left:20px"/>
+                </div>
+                <div>
+                        <label for="starRatingID">Rating( from 0 to 5):</label>
+                        <input id="starRatingID" type="text"
+                            placeholder="Rating..."
+                            formControlName="starRating"
+                            style="margin-left:20px"/>
+                </div>
+                <button  class="btn btn-primary" 
+                type="submit"
+                style="width: 100px">Save </button>
+        </form>
+
+    </div>
+    <div class="card-footer"> 
+    </div>
+
+</div>

@@ -1,12 +1,17 @@
-export interface IProduct{
-    productId:number;
-    productName:string;
-    productCode:string;
-    releaseDate:string;
-    price:number;
-    description:string;
-    starRating:number;
-    imageUrl:string;
+export class Product{
+
+  
+    constructor(
+    public productId:number=null,
+    public productName:string=null,
+    public productCode:string=null,
+    public releaseDate:string=null,
+    public price:number=null,
+    public description:string=null,
+    public starRating:number=null,
+    public imageUrl:string=null){
+
+    }
 
     
 

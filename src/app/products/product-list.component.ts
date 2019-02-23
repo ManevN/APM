@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { IProduct } from "./product";
+import { Product } from "./product";
 import { ProductService } from "./product.service";
 
 
@@ -18,8 +18,8 @@ export class ProductListComponent implements OnInit{
   
     _listFilter : string;
 
-    filteredProducts : IProduct[];
-    products : IProduct[] = [];
+    filteredProducts : Product[];
+    products : Product[] = [];
 
     
 
@@ -54,9 +54,9 @@ export class ProductListComponent implements OnInit{
         this.showImage = !this.showImage;
       }
 
-      performFilter(filterBy:string) : IProduct[]{
+      performFilter(filterBy:string) : Product[]{
         filterBy = filterBy.toLowerCase();
-          return this.products.filter((product: IProduct)=> product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+          return this.products.filter((product: Product)=> product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
       }
 
       onRetingClicked(message:string): void {
