@@ -1,11 +1,25 @@
 <nav class='navbar navbar-expand navbar-light bg-light'>
-  <h5><a class='navbar-brand'>{{pageTitle}}</a></h5>
+  <a class='navbar-brand'>{{pageTitle}}</a>
   <ul class='nav nav-pills'> 
     <li><a class='nav-link' [routerLink]="['/welcome']">Home</a></li>
     <li><a class='nav-link' [routerLink]="['/products']">Product List</a></li>
-    <li><a class='nav-link' [routerLink]="['/productAppent']">Add Product</a></li>
   </ul>
 </nav>
 <div class='container'>
     <router-outlet></router-outlet>
 </div>
+<mat-checkbox 
+  #showDetails
+  (change)="onChange($event)"
+  >Show details</mat-checkbox>
+
+  <div *ngIf="showDetails.checked"> Here are details about...</div>
+
+  <div class="RadioButtonContainer">
+      <mat-radio-group>
+        <ul class="list-unstyled">  
+          <li><mat-radio-button value="1" [checked]='isChecked'>Silver</mat-radio-button></li>
+          <li><mat-radio-button value="2">Gold</mat-radio-button></li>
+        </ul> 
+        </mat-radio-group>
+  </div>

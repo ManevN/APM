@@ -5,6 +5,8 @@ import { RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatCheckboxModule, MatRadioModule} from '@angular/material';
 
 
 
@@ -16,7 +18,10 @@ import { ProductModule } from './products/product.module';
   ],
   imports: [
     BrowserModule, 
+    BrowserAnimationsModule,
     HttpClientModule,
+    MatCheckboxModule,
+    MatRadioModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent},
       { path: '', redirectTo: 'welcome', pathMatch:'full'},

@@ -8,6 +8,12 @@
 
   export class AppComponent{
     pageTitle : string = "Acme Product Managment";
+    isChecked = true;
+
+
+    onChange($event){
+      console.log($event);
+    }
 
 
   }

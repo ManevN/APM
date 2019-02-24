@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router'
-import { Product } from './product';
+import { IProduct } from './product';
 import { ProductService} from "./product.service";
 
 @Component({
@@ -10,7 +10,7 @@ import { ProductService} from "./product.service";
 export class ProductDetailComponent implements OnInit {
 
   pageTitle: string = 'Product Detail';
-  product:Product;
+  product:IProduct;
 
   constructor(private route:ActivatedRoute,  private router:Router, private productService:ProductService) { }
 

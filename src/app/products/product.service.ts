@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Product } from "./product";
+import { IProduct } from "./product";
 import {HttpClient, HttpErrorResponse } from "@angular/common/http";
 import {Observable, throwError} from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
@@ -12,28 +12,16 @@ import { catchError, tap } from 'rxjs/operators';
 export class ProductService{
 
     private productUrl = 'api/products/products.json'
-    products :Product[] =[];
+    products :IProduct[] =[];
 
     constructor(private http:HttpClient){}
 
-    getProducts(): Observable<Product[]>{
+    getProducts(): Observable<IProduct[]>{
   
-      return this.http.get<Product[]>(this.productUrl).pipe(
+      return this.http.get<IProduct[]>(this.productUrl).pipe(
         tap(data => console.log('All' + JSON.stringify(data))),
         catchError(this.handleError)
       );
-    }
-
-    getProduct(id:number):Observable<Product>{
-      return null;
-    }
-
-    createProduct(product:Product):Observable<Product>{
-      return null;
-    }
-
-    deleteProduct(id:number): Observable<{}>{
-      return null;
     }
 
     private handleError(err: HttpErrorResponse){
