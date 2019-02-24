@@ -8,7 +8,9 @@ import { ProductModule } from './products/product.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatCheckboxModule, 
   MatRadioModule,
-  MatSelectModule} from '@angular/material';
+  MatSelectModule,
+  MatInputModule} from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -26,6 +28,7 @@ import { MatCheckboxModule,
     MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
+    MatInputModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent},
       { path: '', redirectTo: 'welcome', pathMatch:'full'},

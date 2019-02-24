@@ -16,6 +16,7 @@
   <div *ngIf="showDetails.checked"> Here are details about...</div>
 
   <div class="RadioButtonContainer">
+    <h5>Basic mat-radio-button</h5>
       <mat-radio-group>
         <ul class="list-unstyled">  
           <li><mat-radio-button value="1" [checked]='isChecked'>Silver</mat-radio-button></li>
@@ -23,3 +24,30 @@
         </ul> 
         </mat-radio-group>
   </div>
+  <div>
+    <h5>Basic mat-select/options</h5>
+    <mat-form-field>
+      <mat-select placeholder="Select color" >
+          <mat-option 
+          *ngFor="let color of colors" 
+           value="color.id">{{color.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <div>
+    <h5>Basic mat-inputs</h5>
+    <form class="example-form">
+      <div>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="What is on your mind?" >
+      </mat-form-field>
+    </div>
+      <div>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Leave a comment"></textarea>
+      </mat-form-field>
+    </div>
+    </form>
+  </div>
+
