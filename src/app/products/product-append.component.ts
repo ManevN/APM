@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import {Router } from "@angular/router";
 import {FormGroup,  FormControl} from "@angular/forms";
 
-import {  Product } from "./product";
+import {  IProduct } from "./product";
 
 
 @Component({
@@ -12,7 +12,7 @@ import {  Product } from "./product";
 export class ProductAppendComponent{
 
     productForm : FormGroup;
-    product = new Product();
+    product;
 
     
     constructor(private router:Router){
